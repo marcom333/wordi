@@ -23,9 +23,6 @@ Route::get("test", function (){
     return view("test");
 });*/
 
-Route::get('/{word?}', [\App\Http\Controllers\WordController::class,"index"]);
-
-/**/
 Route::get('/upload', function () {
     $time = microtime(true);
     $file = Storage::get("public/words.txt");
@@ -42,6 +39,11 @@ Route::get('/upload', function () {
         }
     }
 });
+
+Route::get('/{word?}', [\App\Http\Controllers\WordController::class,"index"]);
+
+/**/
+
 
 
 /* 
